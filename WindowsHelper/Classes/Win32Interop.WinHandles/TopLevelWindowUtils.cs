@@ -1,14 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using Win32Interop.WinHandles.Internal;
 
 namespace Win32Interop.WinHandles
 {
-  /// <summary>
-  ///  Utilities for operating on windows that are top-level on the screen.
-  /// </summary>
-  public static class TopLevelWindowUtils
+    public struct Location
+    {
+        public int x;
+        public int y;
+    }
+
+    public struct Size
+    {
+        public int width;
+        public int height;
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct RECT
+    {
+        public int Left;        // x position of upper-left corner
+        public int Top;         // y position of upper-left corner
+        public int Right;       // x position of lower-right corner
+        public int Bottom;      // y position of lower-right corner
+    }
+
+
+    /// <summary>
+    ///  Utilities for operating on windows that are top-level on the screen.
+    /// </summary>
+    public static class TopLevelWindowUtils
   {
     /// <summary> Gets the WindowHandle to the current foreground window. </summary>
     /// <returns> The foreground window. </returns>
@@ -91,5 +114,15 @@ namespace Win32Interop.WinHandles
 
             NativeMethods.BringWindowToTop(handle.RawPtr);
         }
-  }
+
+        public static int SetWinPos(IntPtr hWnd, IntPtr hWndInsertAfter, Location location, Size size, int flag)
+        {
+            return NativeMethods.SetWindowPos(hWnd, hWndInsertAfter, location.x, location.y, size.width, size.height, flag);
+        }
+
+        public static bool GetWinRect(IntPtr hwnd, out RECT lpRect)
+        {
+            return NativeMethods.GetWindowRect(hwnd, out lpRect);
+        }
+    }
 }

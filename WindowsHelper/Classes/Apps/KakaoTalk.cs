@@ -11,7 +11,16 @@ namespace WindowsHelper.Classes.Apps
     {
         public const string ClassID = "32770";
         public const string MainCaptionID = "카카오톡";
+        public readonly Size _kingSize;
+        public readonly Size _middleSize;
+        public readonly Size _smallSize;
 
+        public KakaoTalk()
+        {
+            _kingSize = new Size { height = 1000, width = 300 };
+            _middleSize = new Size { height = 800, width = 300 };
+            _smallSize = new Size { height = 500, width = 300 };
+        }
 
         public WindowHandle GetMainHandle()
         {
@@ -29,13 +38,13 @@ namespace WindowsHelper.Classes.Apps
 
             if (hWnd.IsValid)
             {
-                WinAPI.GetWinRect(hWnd.RawPtr, out rect);
+                TopLevelWindowUtils.GetWinRect(hWnd.RawPtr, out rect);
             }
 
             return rect;
         }
 
-        public void SetWinPos(WindowHandle hWnd, RECT rect)
+        public void SetMainWindowPos(WindowHandle hWnd, RECT rect)
         {
             if (hWnd.IsValid)
             {
@@ -45,12 +54,20 @@ namespace WindowsHelper.Classes.Apps
                 var mainWndHeight = rect.Bottom - rect.Top;
 
                 var location = new Location() { x = Monitor.Witdh - mainWndWidth - offset, y = 0 + offset };
-                var size = new Classes.Size() { width = mainWndWidth, height = mainWndHeight };
+                var size = new Win32Interop.WinHandles.Size() { width = mainWndWidth, height = mainWndHeight };
 
-                WinAPI.SetWinPos(hWnd.RawPtr, IntPtr.Zero, location, size, WinAPI.SWP_SHOWWINDOW); 
+                TopLevelWindowUtils.SetWinPos(hWnd.RawPtr, IntPtr.Zero, location, size, 1); 
             }
         }
 
+        public void SetDialogPos(WindowHandle hWnd)
+        {
+            var rect = GetMainWindowRect(hWnd);
+
+            var location = new Location() { x = rect.Left, y = rect.Top };
+
+            TopLevelWindowUtils.SetWinPos(hWnd.RawPtr, IntPtr.Zero, location, _kingSize, 1);
+        }
 
     }
 }

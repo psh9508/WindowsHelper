@@ -28,7 +28,7 @@ namespace WindowsHelper
             var mainHandle = kakaoLogic.GetMainHandle();
 
             var rect = kakaoLogic.GetMainWindowRect(mainHandle);
-            kakaoLogic.SetWinPos(mainHandle, rect);
+            kakaoLogic.SetMainWindowPos(mainHandle, rect);
 
             var dialogWnds = kakaoLogic.GetDialogHandles();
 
@@ -36,6 +36,7 @@ namespace WindowsHelper
             {
                 foreach (var dialogWnd in dialogWnds)
                 {
+                    kakaoLogic.SetDialogPos(dialogWnd);
                     TopLevelWindowUtils.BringOnTop(dialogWnd);
                 }
             }

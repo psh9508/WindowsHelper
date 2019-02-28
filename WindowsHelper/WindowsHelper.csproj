@@ -53,7 +53,6 @@
     <Compile Include="Classes\Win32Interop.WinHandles\TopLevelWindowUtils.cs" />
     <Compile Include="Classes\Win32Interop.WinHandles\WindowHandle.cs" />
     <Compile Include="Classes\Win32Interop.WinHandles\WindowHandleExtensions.cs" />
-    <Compile Include="Classes\WinAPI.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

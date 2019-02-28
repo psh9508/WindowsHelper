@@ -51,5 +51,11 @@ namespace Win32Interop.WinHandles.Internal
         [DllImport("user32.dll")]
         internal static extern void BringWindowToTop(IntPtr hWnd);
 
+        [DllImport("user32")]
+        internal static extern int SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int x, int y, int cx, int cy, int wFlags);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        internal static extern bool GetWindowRect(IntPtr hwnd, out RECT lpRect);
+
     }
 }
