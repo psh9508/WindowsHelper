@@ -8,3 +8,13 @@ D:\[프로젝트]\[WindowsHelper]\WindowsHelper\WindowsHelper\obj\Debug\WindowsH
 D:\[프로젝트]\[WindowsHelper]\WindowsHelper\WindowsHelper\obj\Debug\WindowsHelper.exe
 D:\[프로젝트]\[WindowsHelper]\WindowsHelper\WindowsHelper\obj\Debug\WindowsHelper.pdb
 D:\[프로젝트]\[WindowsHelper]\WindowsHelper\WindowsHelper\obj\Debug\WindowsHelper.Form1.resources
+D:\[프로젝트]\[WindowsHelper]\WindowsHelper\bin\Debug\WindowsHelper.exe.config
+D:\[프로젝트]\[WindowsHelper]\WindowsHelper\bin\Debug\WindowsHelper.exe
+D:\[프로젝트]\[WindowsHelper]\WindowsHelper\bin\Debug\WindowsHelper.pdb
+D:\[프로젝트]\[WindowsHelper]\WindowsHelper\obj\Debug\WindowsHelper.csprojAssemblyReference.cache
+D:\[프로젝트]\[WindowsHelper]\WindowsHelper\obj\Debug\WindowsHelper.Form1.resources
+D:\[프로젝트]\[WindowsHelper]\WindowsHelper\obj\Debug\WindowsHelper.Properties.Resources.resources
+D:\[프로젝트]\[WindowsHelper]\WindowsHelper\obj\Debug\WindowsHelper.csproj.GenerateResource.cache
+D:\[프로젝트]\[WindowsHelper]\WindowsHelper\obj\Debug\WindowsHelper.csproj.CoreCompileInputs.cache
+D:\[프로젝트]\[WindowsHelper]\WindowsHelper\obj\Debug\WindowsHelper.exe
+D:\[프로젝트]\[WindowsHelper]\WindowsHelper\obj\Debug\WindowsHelper.pdb

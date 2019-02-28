@@ -65,6 +65,7 @@ namespace WindowsHelper.Classes.Apps
             var rect = GetMainWindowRect(hWnd);
 
             var location = new Location() { x = rect.Left, y = rect.Top };
+            //var location = new Location() { x = 0, y = 0 };
 
             TopLevelWindowUtils.SetWinPos(hWnd.RawPtr, IntPtr.Zero, location, _kingSize, 1);
         }
