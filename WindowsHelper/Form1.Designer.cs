@@ -30,6 +30,7 @@
         {
             this.btn닫기 = new System.Windows.Forms.Button();
             this.btn카카오톡정렬 = new System.Windows.Forms.Button();
+            this.btn인터넷정 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn닫기
@@ -52,12 +53,23 @@
             this.btn카카오톡정렬.UseVisualStyleBackColor = true;
             this.btn카카오톡정렬.Click += new System.EventHandler(this.btn카카오톡정렬_Click);
             // 
+            // btn인터넷정
+            // 
+            this.btn인터넷정.Location = new System.Drawing.Point(68, 92);
+            this.btn인터넷정.Name = "btn인터넷정";
+            this.btn인터넷정.Size = new System.Drawing.Size(162, 23);
+            this.btn인터넷정.TabIndex = 2;
+            this.btn인터넷정.Text = "인터넷 정렬";
+            this.btn인터넷정.UseVisualStyleBackColor = true;
+            this.btn인터넷정.Click += new System.EventHandler(this.btn인터넷정_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(302, 327);
             this.ControlBox = false;
+            this.Controls.Add(this.btn인터넷정);
             this.Controls.Add(this.btn카카오톡정렬);
             this.Controls.Add(this.btn닫기);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -71,6 +83,7 @@
 
         private System.Windows.Forms.Button btn닫기;
         private System.Windows.Forms.Button btn카카오톡정렬;
+        private System.Windows.Forms.Button btn인터넷정;
     }
 }
 

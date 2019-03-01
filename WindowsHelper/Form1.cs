@@ -46,5 +46,10 @@ namespace WindowsHelper
         {
             this.Close();
         }
+
+        private void btn인터넷정_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
