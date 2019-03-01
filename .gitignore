@@ -1,0 +1,15 @@
+﻿################################################################################
+# 이 .gitignore 파일은 Microsoft(R) Visual Studio에서 자동으로 만들어졌습니다.
+################################################################################
+
+*.lock
+*.ide
+*.ide-shm
+*.ide-wal
+*.suo
+*.exe
+/WindowsHelper/bin/Debug
+/WindowsHelper/Classes/Win32Interop.WinHandles/package.builder.json
+/WindowsHelper/Classes/Win32Interop.WinHandles/packages.config
+/WindowsHelper/Classes/Win32Interop.WinHandles/Win32Interop.WinHandles.nuspec
+/WindowsHelper/obj/Debug
