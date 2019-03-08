@@ -47,9 +47,19 @@ namespace WindowsHelper
             this.Close();
         }
 
-        private void btn인터넷정_Click(object sender, EventArgs e)
+        private void btn크롬_Click(object sender, EventArgs e)
         {
+            var kakaoLogic = new KakaoTalk();
 
+            var chromeLogic = new Chrome();
+
+            var chromeHandles = chromeLogic.GetBrowserHandles();
+
+            foreach (var item in chromeHandles)
+            {
+                //kakaoLogic.SetMainWindowPos(item, new RECT() { Bottom = 500, Left = 500, Right = 500, Top = 500 });
+                chromeLogic.SetBrowserCenter(item);
+            }
         }
     }
 }

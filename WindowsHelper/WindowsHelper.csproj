@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Apps\Internet.cs" />
+    <Compile Include="Classes\Apps\Chrome.cs" />
     <Compile Include="Classes\Apps\KakaoTalk.cs" />
     <Compile Include="Classes\Helper\ObjectHelper.cs" />
     <Compile Include="Classes\Monitor.cs" />

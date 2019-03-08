@@ -59,9 +59,9 @@
             this.btn인터넷정.Name = "btn인터넷정";
             this.btn인터넷정.Size = new System.Drawing.Size(162, 23);
             this.btn인터넷정.TabIndex = 2;
-            this.btn인터넷정.Text = "인터넷 정렬";
+            this.btn인터넷정.Text = "크롬 정렬";
             this.btn인터넷정.UseVisualStyleBackColor = true;
-            this.btn인터넷정.Click += new System.EventHandler(this.btn인터넷정_Click);
+            this.btn인터넷정.Click += new System.EventHandler(this.btn크롬_Click);
             // 
             // Form1
             // 
