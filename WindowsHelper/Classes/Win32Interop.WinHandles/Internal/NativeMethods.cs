@@ -57,5 +57,18 @@ namespace Win32Interop.WinHandles.Internal
         [DllImport("user32.dll", SetLastError = true)]
         internal static extern bool GetWindowRect(IntPtr hwnd, out RECT lpRect);
 
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        internal static extern IntPtr SetWindowsHookEx(int idHook, LowLevelKeyboardProc lpfn, IntPtr hMod, uint dwThreadId);
+        internal delegate IntPtr LowLevelKeyboardProc(int nCode, IntPtr wParam, IntPtr lParam);
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        internal static extern bool UnhookWindowsHookEx(IntPtr hhk);
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        internal static extern IntPtr CallNextHookEx(IntPtr hhk, int nCode, IntPtr wParam, IntPtr lParam);
+
+        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        internal static extern IntPtr GetModuleHandle(string lpModuleName);
     }
 }

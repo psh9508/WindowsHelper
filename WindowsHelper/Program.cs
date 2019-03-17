@@ -1,15 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Win32Interop.WinHandles.Internal;
 using WindowsHelper.Properties;
 
 namespace WindowsHelper
 {
     static class Program
     {
+        private const int WH_KEYBOARD_LL = 13;
+        private const int WM_KEYDOWN = 0x0100;
+        private static IntPtr _hookID = IntPtr.Zero;
+
         /// <summary>
         /// 해당 응용 프로그램의 주 진입점입니다.
         /// </summary>
@@ -18,6 +25,12 @@ namespace WindowsHelper
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            _hookID = InterceptKeys.Start();
+
+            InterceptKeys.CompleteHookingKey += Key => {
+                var hookedKey = Key;
+            };
 
             using (var noti = new NotifyIcon())
             {
@@ -35,6 +48,8 @@ namespace WindowsHelper
 
                 Application.Run();
             }
+
+            NativeMethods.UnhookWindowsHookEx(_hookID);
         }
 
         private static void Noti_MouseClick(object sender, MouseEventArgs e)
