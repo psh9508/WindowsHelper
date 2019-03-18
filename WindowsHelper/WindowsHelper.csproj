@@ -51,6 +51,7 @@
     <Compile Include="Classes\Helper\ObjectHelper.cs" />
     <Compile Include="Classes\InterceptKeys.cs" />
     <Compile Include="Classes\Monitor.cs" />
+    <Compile Include="Classes\Mouse.cs" />
     <Compile Include="Classes\Win32Interop.WinHandles\Internal\NativeMethods.cs" />
     <Compile Include="Classes\Win32Interop.WinHandles\TopLevelWindowUtils.cs" />
     <Compile Include="Classes\Win32Interop.WinHandles\WindowHandle.cs" />

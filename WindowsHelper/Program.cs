@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Win32Interop.WinHandles.Internal;
+using WindowsHelper.Classes;
 using WindowsHelper.Properties;
 
 namespace WindowsHelper
@@ -26,6 +27,7 @@ namespace WindowsHelper
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            Mouse.StartTranking();
             _hookID = InterceptKeys.Start();
 
             InterceptKeys.CompleteHookingKey += Key => {

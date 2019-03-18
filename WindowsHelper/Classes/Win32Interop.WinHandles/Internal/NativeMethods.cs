@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -70,5 +71,8 @@ namespace Win32Interop.WinHandles.Internal
 
         [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         internal static extern IntPtr GetModuleHandle(string lpModuleName);
+
+        [DllImport("user32")]
+        internal static extern Int32 GetCursorPos(out Point pt);
     }
 }

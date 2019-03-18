@@ -19,10 +19,22 @@ namespace WindowsHelper
         public Form1()
         {
             InitializeComponent();
+
+            Shown += (sender, e) => {
+                this.Size = new System.Drawing.Size(350, Monitor.Height);
+                this.Location = new Point(0, 0);
+            };
+
+            Mouse.TrankingMousePos += (sender, pos) => {
+                var t = pos;
+            };
         }
 
         private void btn카카오톡정렬_Click(object sender, EventArgs e)
         {
+            var t = this.Location;
+            this.Location = new Point(0, 0);
+
             var kakaoLogic = new KakaoTalk();
 
             var mainHandle = kakaoLogic.GetMainHandle();
