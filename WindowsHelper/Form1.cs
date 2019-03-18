@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Win32Interop.WinHandles;
@@ -16,25 +17,53 @@ namespace WindowsHelper
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
 
             Shown += (sender, e) => {
-                this.Size = new System.Drawing.Size(350, Monitor.Height);
+                this.Size = new System.Drawing.Size(350, Classes.Monitor.Height);
                 this.Location = new Point(0, 0);
             };
 
             Mouse.TrankingMousePos += (sender, pos) => {
-                var t = pos;
+
+                var uiThread = SynchronizationContext.Current;
+
+                if (pos.X < 20)
+                    ShowForm();
+                else
+                    new Thread(HideForm).Start();
             };
+        }
+       
+        private void ShowForm()
+        {
+            //if (this.Location.X >= 150 && this.Location.X <= 360)
+            //    return;
+
+            if(this.InvokeRequired)
+            {
+                this.Invoke(new Action(() =>
+                {
+                    this.Location = new Point(-350, 0);
+
+                    while (this.Location.X <= 0)
+                    {
+                        this.Location = new Point(this.Location.X + 1, 0);
+                    }
+                }));
+            }
+        }
+
+        private void HideForm()
+        {
+            
         }
 
         private void btn카카오톡정렬_Click(object sender, EventArgs e)
         {
-            var t = this.Location;
-            this.Location = new Point(0, 0);
-
             var kakaoLogic = new KakaoTalk();
 
             var mainHandle = kakaoLogic.GetMainHandle();

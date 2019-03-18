@@ -27,11 +27,11 @@ namespace WindowsHelper.Classes
 
         private static void Tranking()
         {
-            Point pos;
-
-            while(true)
+            while (true)
             {
-                GetCursorPos(out pos);
+                GetCursorPos(out Point pos);
+
+                Thread.Sleep(100);
 
                 TrankingMousePos?.Invoke(null, pos);
             }
